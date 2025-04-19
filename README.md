@@ -12,7 +12,7 @@ This is a professional authentication system built with **Next.js** and **Fireba
 
 ## 🚀 Live Demo
 
-🔗 **Vercel Deployment URL**: [https://your-vercel-app.vercel.app](https://your-vercel-app.vercel.app)
+🔗 **Vercel Deployment URL**: [https://task2-gamma-six.vercel.app/)
 
 ---
 
