@@ -1,36 +1,35 @@
-# Next.js Firebase Authentication
 
-This is a professional authentication system built with **Next.js** and **Firebase**, featuring modern UI, Google auth, protected routes, and interactive visuals.
+# System Diagram Documentation
 
-## 🔐 Features
+The `auth-flow-diagram.png` file in this directory illustrates the authentication flow of the application.
 
-- Modern login/signup UI with floating labels and validation
-- Google sign-in and email/password auth (via Firebase)
-- Auth token stored securely and session persisted
-- Protected routes with `onAuthStateChanged` listener
-- Smooth, animated background with cursor-follow effect
-- Error handling with toast notifications
+## Components
 
----
+1. **User**: Represents the end-user interacting with the application through login/signup forms and Google authentication.
+2. **Auth UI**: The login/signup forms, validation logic, and error handling components.
+3. **Firebase API**: Firebase Authentication service that handles credential verification and token generation.
+4. **Protected Routes**: Routes that require authentication, including the dashboard and user profile pages.
 
-## 🚀 Live Demo
+## Flows
 
-🔗 **Vercel Deployment URL**: [https://your-vercel-app.vercel.app](https://your-vercel-app.vercel.app)
+### Authentication Flow
+1. User enters credentials on Login/Signup page or uses Google authentication
+2. Auth UI validates input and sends credentials to Firebase
+3. Firebase validates credentials and returns auth token or error
+4. Token is stored in browser and used for subsequent requests
+5. Auth context monitors auth state with onAuthStateChanged
+6. Protected routes check auth state before rendering
+7. Unauthenticated users are redirected to login page
+8. On logout, token is invalidated and user is redirected
 
----
+### Token Validation Flow
+- **Client**: Sends request with Firebase ID token in Authorization header
+- **Firebase Auth**: Verifies token signature, expiration, and claims
+- **Server**: Processes request if token is valid
+- **Error Handler**: Returns 401/403 error if token is invalid or expired
 
-## 📂 Project Setup
+See the diagram page at `/diagram` route for an interactive version.
 
-### 🛠 Prerequisites
+## Credits
 
-- Node.js 18+
-- Firebase Project with Authentication enabled
-
-### 🧪 Installation
-
-```bash
-git clone https://github.com/alamuruharsha24/task2.git
-cd task2
-npm install
-npm run dev
-
+Designed and documented by John Doe
